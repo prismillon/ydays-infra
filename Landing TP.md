@@ -44,3 +44,17 @@ C:\>
 
 -  ⏹️ Placez un `PC3` relié uniquement au routeur `R3` avec l'adresse IP `60.0.1.1`
 ![[routeur triangle très nul.png]]
+- 🎰 Pingez les PC avec un traceroute pour montrer le chemin.
+```
+C:\>tracert 60.0.1.2
+
+Tracing route to 60.0.1.2 over a maximum of 30 hops:
+
+1 0 ms 0 ms 0 ms 10.0.1.1
+2 0 ms 0 ms 0 ms 50.0.1.1
+3 23 ms 0 ms 0 ms 60.0.1.2
+
+Trace complete.
+
+C:\>
+```

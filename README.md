@@ -5,8 +5,8 @@
 	- cloud hybride: un ensemble des deux rassemblé pour être considéré comme un seul.
 
 macos pardon romain je suis désolé je fais ce que je peux.... (mon mac a 12h d'autonomie ratio)
-![[image ip vm.png]]
-![[image disque vm.png]]
+![[image ip vm.png]](./image%20ip%20vm.png)
+![[image disque vm.png]](./image%20disque%20vm.png)
 ```bash
 [user@landing-vm1 ~]$ lsblk
 NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
@@ -23,7 +23,7 @@ vdb         252:16   0   10G  0 disk
 ```
 
 - ⏹️ Placez deux routeurs `R1` `R2` et deux PC `PC1` et `PC2`. Reliez un PC à un routeur chacun, puis reliez les deux routeurs entre eux.
-![[routeur nul.png]]
+![[routeur nul.png]](./routeur%20nul.png)
 - 🎯 Quelle est la commande à utiliser pour faire en sorte que mon PC dans le réseau en `10.0` pinge mon autre PC dans le réseau `20.0` ?
 `ip route 20.0.1.1 255.255.255.0 30.0.1.1` et inversement
 
@@ -43,4 +43,19 @@ C:\>
 ```
 
 -  ⏹️ Placez un `PC3` relié uniquement au routeur `R3` avec l'adresse IP `60.0.1.1`
-![[routeur triangle très nul.png]]
+![[routeur triangle très nul.png]](./routeur%20triangle%20très%20nul.png)
+
+- 🎰 Pingez les PC avec un traceroute pour montrer le chemin.
+```
+C:\>tracert 60.0.1.2
+
+Tracing route to 60.0.1.2 over a maximum of 30 hops:
+
+1 0 ms 0 ms 0 ms 10.0.1.1
+2 0 ms 0 ms 0 ms 50.0.1.1
+3 23 ms 0 ms 0 ms 60.0.1.2
+
+Trace complete.
+
+C:\>
+```
